@@ -7,9 +7,9 @@ Every project here states a number and hands you a way to check it yourself.
 
 <!--SNAKE:START-->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=0">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=0">
-  <img alt="A shared snake game board, 21 by 11. Score 0, high score 0, 0 moves played." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=0" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=1">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=1">
+  <img alt="A shared snake game board, 21 by 11. Score 0, high score 0, 1 moves played." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=1" width="100%">
 </picture>
 
 <div align="center">
@@ -21,6 +21,8 @@ Every project here states a number and hands you a way to check it yourself.
 |  | [**&darr; down**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:down&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |  |
 
 </div>
+
+**Last moves:** [@nilaymastaadmi](https://github.com/nilaymastaadmi) up
 <!--SNAKE:END-->
 
 <sub>There is one snake and everyone shares it. Clicking an arrow opens a pre-filled
