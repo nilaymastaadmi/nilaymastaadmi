@@ -1,105 +1,70 @@
 ### hi, i'm Nilay
 
-**i like building.** ECE final year at BITS Goa. Most of what is below started as a
-question I could not answer by reading, so I built the thing and measured it instead.
+**i like building.** ECE final year at BITS Goa.
 
-Every project here states a number and hands you a way to check it yourself.
-
-<!--SNAKE:START-->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=0">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=0">
-  <img alt="A shared snake game board, 21 by 11. Score 0, high score 0, 0 moves played." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=0" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=2">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=2">
+  <img alt="A snake game playing itself: 240 moves, growing to length 23, baked into a single animated SVG." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=2" width="100%">
 </picture>
 
-<div align="center">
-
-|  |  |  |
-|:--:|:--:|:--:|
-|  | [**&uarr; up**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:up&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |  |
-| [**&larr; left**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:left&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) | *one click, one square* | [**right &rarr;**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:right&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |
-|  | [**&darr; down**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:down&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |  |
-
-</div>
-<!--SNAKE:END-->
-
-<sub>There is one snake and everyone shares it. Clicking an arrow opens a pre-filled
-issue; submitting it runs a GitHub Action that moves the snake one square, redraws the
-board, and closes the issue. No account of mine, no third-party service, about 300 lines
-in [`game/`](game/). Walking it into a wall is allowed and will be recorded under your
-name forever.</sub>
+<sub>A real game, played by a real solver, then baked frame by frame into one SVG. It
+survives 240 moves because it only goes for food when it can still reach its own tail
+afterwards. Source in <a href="anim/">anim/</a>.</sub>
 
 ---
 
-## What I've built
+## Silicon
 
-### Silicon
+**[axi-cdc-uvm](https://github.com/nilaymastaadmi/axi-cdc-uvm)** &nbsp;`SystemVerilog` `UVM` `SVA`
+An AXI4-Lite slave whose writes cross into an unrelated 27 MHz domain through a gray-coded
+FIFO. 100 seeds, 11,495 crossings, zero mismatches, 18/18 coverage. Runs clean on Cadence
+Xcelium too.
 
-Things that end up on a chip.
+**[rv32-dsp-soc](https://github.com/nilaymastaadmi/rv32-dsp-soc)** &nbsp;`Verilog` `RISC-V`
+An RV32I core with a GPS correlator hung off the bus. The hardware search runs 5.63x faster
+than the software one, and both return the same answer on the same noisy samples. Checked
+instruction by instruction against a C++ simulator, not by staring at waveforms.
 
-- **[axi-cdc-uvm](https://github.com/nilaymastaadmi/axi-cdc-uvm)** `SystemVerilog` `UVM` `SVA`
-  An AXI4-Lite slave whose writes cross into an unrelated clock domain through a
-  gray-coded async FIFO. 100 seeds at 100 MHz against 27 MHz: 11,495 crossings, 0
-  scoreboard mismatches, 1,266,540 assertion checks, 18/18 functional coverage. The UVM
-  environment and the bound SVA also run clean on Cadence Xcelium 25.03 under UVM 1.2.
-- **nebula-slacksmith** `private` `Verilog`
-  Latency-changing RTL optimisation that emits its own proof obligations, so a
-  transformation has to justify itself rather than be trusted.
-- **rv32-dsp-soc** `private` `Verilog`
-  A RISC-V RV32 core with DSP extensions, synthesised and timed.
-- **analog-pmic-sky130** `private` `SKY130`
-  Two-stage Miller-compensated OTA and an LDO regulator: gm/Id sizing, 15-corner PVT
-  characterisation, Monte Carlo offset, measured loop stability.
-- **gmid-char-sky130** `private` `SKY130`
-  A gm/Id framework that sizes transistors from measured device data instead of guesswork.
+**[analog-pmic-sky130](https://github.com/nilaymastaadmi/analog-pmic-sky130)** &nbsp;`SKY130` `ngspice`
+A two-stage OTA and the LDO built around it. 76 dB gain, 81 degrees phase margin, passing
+across all 15 PVT corners plus a 300-sample Monte Carlo.
 
-### Agents
+**[gmid-char-sky130](https://github.com/nilaymastaadmi/gmid-char-sky130)** &nbsp;`SKY130` `ngspice`
+Sweeps the devices so transistor widths come out of a lookup instead of out of guessing.
+This is where the sizing data above comes from.
 
-LLM systems, plus the harness that grades them. The harness is the part I care about.
+**nebula-slacksmith** &nbsp;`private until 15 Sept`
+RTL optimisation that changes pipeline latency and writes its own proof obligation. Most
+tools will not touch latency, because proving equivalence across a timing change is the
+hard part.
 
-- **[market-query-agent](https://github.com/nilaymastaadmi/market-query-agent)** `Python`
-  An agent that answers questions about Indian equity data by writing SQL. 93.8% on 48
-  graded questions, 40/40 on the answerable tiers, $0.0160 per task, 100% SQL citation
-  rate. The failure taxonomy is hand-labelled, and a shallow automated classifier
-  disagreed with the hand label on 3 of 3 failures. That disagreement is the result.
-- **[alpaca-hackathon](https://github.com/nilaymastaadmi/alpaca-hackathon)** `Python`
-  An options agent that refuses to trade. It checks whether volatility is actually
-  expensive before selling it, and on its first live run it declined: implied 12.81
-  against trailing realised 13.28. Every decision, refusals included, is a signed
-  artifact you can verify with `make verify`.
-- **[jaw2026-trust-reliability](https://github.com/nilaymastaadmi/jaw2026-trust-reliability)** `Python`
-  333 questions over 687 documents with no database, schema, or entity mapping supplied.
-  It rebuilds the withheld database (41 tables, 9,973 rows) and answers deterministically.
-  Scores 100.000 on the official evaluation set.
+## Agents
 
-### Seeing and hearing
+**[market-query-agent](https://github.com/nilaymastaadmi/market-query-agent)** &nbsp;`Python`
+Answers questions about Indian equity data by writing SQL. 93.8% over 48 questions. Three
+failed. I labelled all three by hand, and the automatic classifier got all three wrong.
 
-Models pointed at images and audio.
+**[alpaca-hackathon](https://github.com/nilaymastaadmi/alpaca-hackathon)** &nbsp;`Python`
+Sells option premium, but only when volatility is actually expensive. On its first live run
+it refused: implied 12.81 against realised 13.28. Every call it makes is signed, so you can
+check the log is the log.
 
-- **[pcb-drishti-pro](https://github.com/nilaymastaadmi/pcb-drishti-pro)** `Python` `YOLO`
-  PCB defect detection with a rupee-cost RELEASE / REWORK / SCRAP layer on top, so the
-  output is a decision rather than a bounding box. 0.717 held-out-board mAP@0.5 on board
-  designs it never trained on, and about 97% fewer false positives on out-of-domain
-  photos. The model is still served: one `curl` from the README returns real detections.
-- **heart-murmur-index** `private` `Python`
-  A 3,163-image spectrogram dataset of phonocardiograms, indexed and manifested so the
-  structure is reproducible even though the images stay local.
+**[jaw2026-trust-reliability](https://github.com/nilaymastaadmi/jaw2026-trust-reliability)** &nbsp;`Python`
+333 questions over 687 documents, with no database supplied. It builds one, then answers
+from it. 100.000 on the official set.
 
-### Deciding
+## Vision
 
-Work whose deliverable is a decision, and the reasoning that has to survive someone
-attacking it.
+**[pcb-drishti-pro](https://github.com/nilaymastaadmi/pcb-drishti-pro)** &nbsp;`Python` `YOLO`
+Finds PCB defects and prices them, so the output is SCRAP or RELEASE instead of a box on an
+image. 0.717 mAP on board designs it never trained on. Still served: one curl returns live
+detections.
 
-- **[sih2026-handoff](https://github.com/nilaymastaadmi/sih2026-handoff)** `research`
-  The full decision package behind one competition entry: a 30-problem sweep, a
-  competitor model, prior-art kill tests, and an adversarial audit that tried to overturn
-  the pick and could not. Written so a stranger can reconstruct the reasoning from zero.
+**heart-murmur-index** &nbsp;`private`
+3,163 heart-sound spectrograms, indexed and manifested so the dataset rebuilds without
+shipping the images around.
 
 ---
 
-### Tools
-
-`SystemVerilog` `UVM` `SVA` `Verilog` `Yosys` `SKY130` `ngspice` `Python` `C++` `PyTorch` `Git` `Linux`
-
-Several projects above are private because they are coursework-adjacent or still running.
-Happy to walk through any of them.
+`SystemVerilog` &nbsp;`UVM` &nbsp;`SVA` &nbsp;`Verilog` &nbsp;`Yosys` &nbsp;`SKY130` &nbsp;`ngspice` &nbsp;`Python` &nbsp;`C++` &nbsp;`PyTorch` &nbsp;`Linux`
