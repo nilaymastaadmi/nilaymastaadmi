@@ -1,10 +1,17 @@
-# Nilay Toshniwal
-
-ECE final year at BITS Pilani, Goa.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/banner-light.svg">
+  <img alt="Nilay Toshniwal. ECE final year, BITS Goa. RTL design and verification, and LLM agents I measure rather than demo. An animated timing diagram: a 100 MHz aclk domain crossing into an unrelated 27 MHz cclk domain through a gray-coded async FIFO. 11,495 crossings, 0 scoreboard mismatches, 1,266,540 assertion checks, 18 of 18 bins covered."
+       src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/banner-light.svg" width="100%">
+</picture>
 
 Two lines of work: RTL design and verification, and LLM agents that ship with the
 evaluation harness attached. The common thread is that every repository below states a
 number and hands you a way to check it yourself.
+
+The banner is not decoration: it is the design in
+[axi-cdc-uvm](https://github.com/nilaymastaadmi/axi-cdc-uvm), drawn on one time axis, so
+the two traces really are in a 100:27 period ratio.
 
 ---
 
