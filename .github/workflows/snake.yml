@@ -1,0 +1,61 @@
+name: snake
+
+on:
+  issues:
+    types: [opened]
+
+# Serialise moves so two simultaneous players cannot race the same board.
+concurrency:
+  group: snake-board
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  move:
+    if: startsWith(github.event.issue.title, 'snake:')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Untrusted input reaches the script through env only. It is never
+      # interpolated into a shell command, and move.py whitelists the four
+      # directions before anything is applied.
+      - name: Apply the move
+        id: apply
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_ACTOR: ${{ github.event.issue.user.login }}
+        run: python game/move.py
+
+      - name: Commit the new board
+        if: steps.apply.outputs.outcome != 'ignored'
+        run: |
+          git config user.name "Nilay Toshniwal"
+          git config user.email "toshniwalnilay@gmail.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "board unchanged"
+          else
+            git commit -m "snake: move ${{ github.run_number }}"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main && git push origin HEAD:main && break
+              echo "retry $i"
+              sleep 3
+            done
+          fi
+
+      - name: Reply and close
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: ${{ steps.apply.outputs.comment }}
+        run: |
+          gh issue comment "$NUMBER" --body "$BODY"
+          gh issue close "$NUMBER"

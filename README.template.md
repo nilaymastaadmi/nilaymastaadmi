@@ -6,21 +6,6 @@ question I could not answer by reading, so I built the thing and measured it ins
 Every project here states a number and hands you a way to check it yourself.
 
 <!--SNAKE:START-->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=0">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=0">
-  <img alt="A shared snake game board, 21 by 11. Score 0, high score 0, 0 moves played." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=0" width="100%">
-</picture>
-
-<div align="center">
-
-|  |  |  |
-|:--:|:--:|:--:|
-|  | [**&uarr; up**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:up&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |  |
-| [**&larr; left**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:left&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) | *one click, one square* | [**right &rarr;**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:right&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |
-|  | [**&darr; down**](https://github.com/nilaymastaadmi/nilaymastaadmi/issues/new?title=snake:down&body=Submit+this+issue+and+the+bot+moves+the+shared+snake+one+square%2C+then+closes+the+issue.+Nothing+else+happens.+You+can+edit+the+title+to+up/down/left/right+before+submitting.) |  |
-
-</div>
 <!--SNAKE:END-->
 
 <sub>There is one snake and everyone shares it. Clicking an arrow opens a pre-filled
