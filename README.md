@@ -5,9 +5,9 @@ ECE final year at BITS Goa.
 **I like building.**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=6">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=6">
-  <img alt="A snake game playing itself. It only moves toward the food when a path back to its own tail still exists." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=6" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=7">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=7">
+  <img alt="A snake game playing itself. It only moves toward the food when a path back to its own tail still exists." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=7" width="100%">
 </picture>
 
 ---

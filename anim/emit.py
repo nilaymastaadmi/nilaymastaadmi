@@ -33,7 +33,7 @@ def emit(frames, theme):
       % (Wd, Ht, Wd, Ht))
 
     a('<text x="%d" y="36" font-family="%s" font-size="26" font-weight="700" fill="%s">'
-      'No game over</text>' % (PAD, SANS, c["fg"]))
+      'Never stop</text>' % (PAD, SANS, c["fg"]))
 
     a('<rect x="%d" y="%d" width="%d" height="%d" rx="10" fill="%s"/>'
       % (PAD - 8, TOP - 8, gw + 16, gh + 16, c["panel"]))
