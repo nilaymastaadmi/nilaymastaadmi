@@ -29,11 +29,11 @@ def emit(frames, theme):
     a = s.append
 
     a('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d" '
-      'role="img" aria-label="A snake game playing itself, looping continuously.">'
+      'role="img" aria-label="A snake game playing itself. It only moves toward the food when a path back to its own tail still exists.">'
       % (Wd, Ht, Wd, Ht))
 
     a('<text x="%d" y="36" font-family="%s" font-size="26" font-weight="700" fill="%s">'
-      'Snake plays itself</text>' % (PAD, SANS, c["fg"]))
+      'Always a way back</text>' % (PAD, SANS, c["fg"]))
 
     a('<rect x="%d" y="%d" width="%d" height="%d" rx="10" fill="%s"/>'
       % (PAD - 8, TOP - 8, gw + 16, gh + 16, c["panel"]))
