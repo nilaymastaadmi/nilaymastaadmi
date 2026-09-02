@@ -10,7 +10,7 @@ ECE final year at BITS Goa.
   <img alt="A snake game playing itself. It only moves toward the food when a path back to its own tail still exists." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=4" width="100%">
 </picture>
 
-*The ouroboros eats its own tail. This one only eats when it can still reach it.*
+*An ouroboros with an exit plan.*
 
 ---
 
