@@ -1,16 +1,14 @@
-### hi, i'm Nilay
+### Hi, I'm Nilay
 
-**i like building.** ECE final year at BITS Goa.
+ECE final year at BITS Goa.
+
+**I like building.**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=2">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=2">
-  <img alt="A snake game playing itself: 240 moves, growing to length 23, baked into a single animated SVG." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=2" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=3">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=3">
+  <img alt="A snake game playing itself, looping continuously." src="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=3" width="100%">
 </picture>
-
-<sub>A real game, played by a real solver, then baked frame by frame into one SVG. It
-survives 240 moves because it only goes for food when it can still reach its own tail
-afterwards. Source in <a href="anim/">anim/</a>.</sub>
 
 ---
 
