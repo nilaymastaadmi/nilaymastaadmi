@@ -70,12 +70,7 @@ perfectly. [Try it live](https://nilaymastaadmi.github.io/quiet-neurons/), no si
 3,163 heart-sound spectrograms, indexed and manifested so the dataset rebuilds without
 shipping the images around.
 
-## Product
-
-**[groww-first-investment](https://github.com/nilaymastaadmi/groww-first-investment)** &nbsp;`JavaScript`
-A first-time investor path inside Groww's app, built as a product case study. One rule set
-from your income, shown in rupees before you commit. 23 automated checks.
-[Open it](https://nilaymastaadmi.github.io/groww-first-investment/). Not affiliated with Groww.
+## Web
 
 **[portfolio](https://github.com/nilaymastaadmi/portfolio)** &nbsp;`Astro` `GSAP`
 My site, drawn as a metro map: five lines, projects as stations, interchanges where work
