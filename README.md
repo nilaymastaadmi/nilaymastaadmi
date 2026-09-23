@@ -4,6 +4,8 @@ ECE final year at BITS Goa.
 
 **I like building.**
 
+[nilaytoshniwal.vercel.app](https://nilaytoshniwal.vercel.app) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/nilay-toshniwal)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-dark.svg?v=8">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nilaymastaadmi/nilaymastaadmi/main/assets/snake-light.svg?v=8">
@@ -32,10 +34,10 @@ across all 15 PVT corners plus a 300-sample Monte Carlo.
 Sweeps the devices so transistor widths come out of a lookup instead of out of guessing.
 This is where the sizing data above comes from.
 
-**nebula-slacksmith** &nbsp;`private until 15 Sept`
-RTL optimisation that changes pipeline latency and writes its own proof obligation. Most
-tools will not touch latency, because proving equivalence across a timing change is the
-hard part.
+**[nebula-slacksmith](https://github.com/nilaymastaadmi/nebula-slacksmith)** &nbsp;`Verilog` `SymbiYosys` `OpenSTA`
+An LLM proposes RTL changes to fix timing, and every change has to be formally proven
+before it counts. Of 12 proposals, 3 were wrong. One of those passed 20,000 random
+instruction vectors; the proof caught it in 46 seconds. Astera Labs Nebula, Track A.
 
 ## Agents
 
@@ -52,16 +54,32 @@ check the log is the log.
 333 questions over 687 documents, with no database supplied. It builds one, then answers
 from it. 100.000 on the official set.
 
-## Vision
+## Machine learning
 
 **[pcb-drishti-pro](https://github.com/nilaymastaadmi/pcb-drishti-pro)** &nbsp;`Python` `YOLO`
 Finds PCB defects and prices them, so the output is SCRAP or RELEASE instead of a box on an
 image. 0.717 mAP on board designs it never trained on. Still served: one curl returns live
 detections.
 
+**[quiet-neurons](https://github.com/nilaymastaadmi/quiet-neurons)** &nbsp;`PyTorch` `JavaScript`
+A 397k-parameter Dragon Hatchling that runs in your browser. It goes quiet on text it just
+learned in context, but not on text it memorised, even though it predicts both almost
+perfectly. [Try it live](https://nilaymastaadmi.github.io/quiet-neurons/), no sign-in.
+
 **heart-murmur-index** &nbsp;`private`
 3,163 heart-sound spectrograms, indexed and manifested so the dataset rebuilds without
 shipping the images around.
+
+## Product
+
+**[groww-first-investment](https://github.com/nilaymastaadmi/groww-first-investment)** &nbsp;`JavaScript`
+A first-time investor path inside Groww's app, built as a product case study. One rule set
+from your income, shown in rupees before you commit. 23 automated checks.
+[Open it](https://nilaymastaadmi.github.io/groww-first-investment/). Not affiliated with Groww.
+
+**[portfolio](https://github.com/nilaymastaadmi/portfolio)** &nbsp;`Astro` `GSAP`
+My site, drawn as a metro map: five lines, projects as stations, interchanges where work
+crosses two fields.
 
 ---
 
